@@ -5,9 +5,9 @@ agent any
         stage('Test') { 
             steps {
                  echo "*******testing************"
-                sh 'pytest'
+                sh 'python3 -m pytest'
             }
         }
-
+}
 }
 
