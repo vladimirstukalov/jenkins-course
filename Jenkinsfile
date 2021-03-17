@@ -1,7 +1,7 @@
 pipeline {
 
 agent {
-   docker { image 'pytest-docker' }
+   docker { dockerfile true }
 }
     stages {
         stage('Test') { 
