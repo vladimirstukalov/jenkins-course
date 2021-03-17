@@ -1,6 +1,10 @@
 pipeline {
 
-docker { image 'python' }
+agent {
+docker { 
+    image 'python' 
+ }
+}
     stages {
         stage('Test') { 
             steps {
