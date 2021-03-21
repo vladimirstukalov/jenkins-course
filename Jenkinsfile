@@ -1,13 +1,19 @@
 pipeline {
-
-   agent { dockerfile true }
+    agent none
     stages {
-        stage('Test') { 
-            steps {
-                 echo "*******testing************"
-                sh 'python -m pytest'
+        stage('Run Tests') {
+            parallel {
+                stage('Test On Windows') {
+                    steps {
+                       sleep(100)
+                    }
+                }
+                stage('Test On Linux') {
+                    steps {
+                        sleep(100)
+                    }
+                }
             }
         }
+    }
 }
-}
-
